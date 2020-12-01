@@ -1,0 +1,17 @@
+.item-list
+  grid-area: item-list
+  list-style-type: none
+  padding: 0
+  &-view:hover
+    transition: all 1s
+    background-color: #989898
+@media (max-width: 768px)
+  .item-list
+    width: 75vw
+@media (max-width: 545px)
+  .item-list
+    width: 90vw
+    &-li
+      font-size: 16px
+    &-header
+      font-size: 24px

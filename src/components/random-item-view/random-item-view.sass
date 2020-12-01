@@ -1,0 +1,61 @@
+.random-item
+  grid-area: random-item
+  display: grid
+  grid-template-areas: "header header" "img name" "img list"
+  grid-template-rows: auto auto auto
+  grid-template-columns: 50% auto
+  grid-gap: 1.5vw
+  align-items: center
+  justify-content: center
+  align-self: start
+  margin-top: 0
+  margin-bottom: 0
+  &-ul
+    list-style-type: none
+    grid-area: list
+    align-self: start
+  &-li
+    border-left: none
+    border-right: none
+    font-size: 20px
+  &-img
+    grid-area: img
+    width: 100%
+    object-fit: cover
+  &-name
+    grid-area: name
+    margin-bottom: 0
+    align-self: end
+    font-size: 26px
+  &-header
+    grid-area: header
+    text-transform: uppercase
+    text-align: center
+
+@media (max-width: 768px)
+  .random-item
+    grid-template-areas: "header" "name" "img" "list"
+    grid-template-rows: auto auto auto
+    grid-template-columns: auto
+    width: 75vw
+    margin-top: 20px
+    &-ul
+      text-align: center
+      font-size: 1rem
+      border-right: none
+      border-left: none
+    &-name
+      text-align: center
+      font-size: 26px
+    &-img
+      width: 70vw
+
+@media (max-width: 545px)
+  .random-item
+    width: 90vw
+    &-img
+      width: 85vw
+    &-li
+      font-size: 16px
+    &-name
+      font-size: 24px

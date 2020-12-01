@@ -1,0 +1,57 @@
+.item-detalis
+  grid-area: item-detalis
+  display: grid
+  grid-template-areas: "header header" "img name" "img list"
+  grid-template-rows: auto auto
+  grid-template-columns: 50% auto
+  grid-gap: 1.5vw
+  place-content: center center
+  &-img
+    grid-area: img
+    align-self: center
+  &-ul
+    grid-area: list
+    list-style-type: none
+    align-self: start
+  &-name
+    grid-area: name
+    margin-bottom: 0
+    align-self: end
+    font-size: 26px
+  &-header
+    grid-area: header
+    text-transform: uppercase
+    text-align: center
+
+@media (min-width: 769px)
+  .item-detalis-img
+    width: 100%
+
+@media (max-width: 768px)
+  .item-detalis
+    &-img
+      width: 70vw
+    &-ul
+      text-align: center
+    &-name
+      text-align: center
+
+@media (max-width: 545px)
+  .item-detalis
+    &-img
+      width: 85vw
+    &-name
+      font-size: 24px
+
+@media (max-width: 768px)
+  .item-detalis
+    grid-template-areas: "header" "name" "img" "list"
+    grid-template-rows: auto auto auto
+    grid-template-columns: auto
+    align-items: center
+    width: 75vw
+
+@media (max-width: 545px)
+  .item-detalis
+    width: 90vw
+

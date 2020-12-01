@@ -1,0 +1,51 @@
+.header
+  grid-area: header
+  display: grid
+  grid-template-areas: "link menu"
+  grid-template-columns: auto auto
+  grid-template-rows: 100%
+  grid-gap: 1vw
+  margin-top: 20px
+  &-link
+    display: inline-block
+    height: 50px
+    font-size: 2.2rem
+    color: #ffe940
+    font-weight: 700
+    text-transform: capitalize
+  &-ul
+    grid-area: menu
+    font-size: 1.2rem
+    list-style-type: none
+    display: grid
+    grid-template-columns: 100px 100px 100px
+    grid-template-rows: 50px
+    align-items: end
+    justify-content: end
+    margin: 0
+    padding: 0
+    text-transform: capitalize
+  &-menu
+    display: none
+    grid-area: none
+  &-list
+    min-width: 100%
+  &-toggle
+    color: #ffe940
+
+@media (max-width: 768px)
+  .dropdown-item
+    text-align: center
+  .header
+    width: 75vw
+    align-items: center
+    &-ul
+      display: none
+      grid-area: none
+    &-menu
+      display: grid
+      grid-area: menu
+
+@media (max-width: 545px)
+  .header
+    width: 90vw
