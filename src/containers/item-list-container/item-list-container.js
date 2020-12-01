@@ -18,7 +18,6 @@ export const ItemListContainer = ({ onGetAlldata, onLoadItemDetalis, currentPage
     }, []);
 
     const { loading } = status;
-
     if(loading)
     {
         return (

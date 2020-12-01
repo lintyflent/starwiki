@@ -16,6 +16,7 @@ export const RandomItemContainer = ({ maxItem, sourceData, sourceImg, namesHeade
 
     const updateItem = () =>
     {
+        SetStatus({ ...status, loading: true })
         let id = randomInteger( 1, maxItem );
         if ( id !== null )
         {
@@ -37,14 +38,13 @@ export const RandomItemContainer = ({ maxItem, sourceData, sourceImg, namesHeade
     }, [])
 
     const { loading } = status;
-
     if( loading )
     {
         return (
-            <ul className="list-group item-list">
+            <section className="list-group random-item">
                 <LoadView/>
-            </ul>
-        )
+            </section>
+        );
     }
     else
     {
