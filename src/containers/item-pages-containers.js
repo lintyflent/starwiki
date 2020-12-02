@@ -1,13 +1,24 @@
-import {SetRecord} from "../components/record-view/record-view";
-import React, {useContext, useState} from "react";
+import { SetRecord } from "../components/record-view/record-view";
+import React, { useContext, useState } from "react";
 import { Context } from "../utils/context"
-import {ItemListContainer} from "../containers/item-list-container/item-list-container";
-import ItemDetalisContainer from "../containers/item-detalis-container/item-detalis-container";
+import { ItemListContainer } from "./item-list-container/item-list-container";
+import ItemDetalisContainer from "./item-detalis-container/item-detalis-container";
 
 export const PeoplesPage = () =>
 {
-    const [selectedItem, SetSelectedItem] = useState(null);
-    const {GetAllPeople, GetPerson, GetImgPersonUrl, pages, namesHeader} = useContext(Context);
+    const [ selectedItem, SetSelectedItem ] = useState(null);
+    const { GetAllPeople, GetPerson, GetImgPersonUrl, pages, namesHeader } = useContext( Context );
+
+    const DataCharacteristics =
+    [
+        {field: "eyeColor", label: "Eye color", reduction: ""},
+        {field: "birthYear", label: "Birth year", reduction: ""},
+        {field: "gender", label: "Gender", reduction: ""},
+        {field: "mass", label: "Mass", reduction: "kg"},
+        {field: "height", label: "Height", reduction: "sm"},
+    ];
+    const JsxCharacteristics = DataCharacteristics.map((item)=> SetRecord(item.field, item.label, item.reduction));
+
     return (
         <React.Fragment>
             <ItemListContainer onLoadItemDetalis={(id) => {SetSelectedItem(id)}}
@@ -19,11 +30,7 @@ export const PeoplesPage = () =>
                              getImgUrl={GetImgPersonUrl}
                              namesHeader={namesHeader[0]}
             >
-                {SetRecord("eyeColor", "Eye color")}
-                {SetRecord("birthYear", "Birth year")}
-                {SetRecord("gender", "Gender")}
-                {SetRecord("mass", "Mass", "kg")}
-                {SetRecord("height", "Height", "sm")}
+                {JsxCharacteristics}
             </ItemDetalisContainer>
         </React.Fragment>
     );
@@ -32,6 +39,17 @@ export const PlanetsPage = () =>
 {
     const [selectedItem, SetSelectedItem] = useState(null);
     const {GetImgPlanetUrl, GetPlanet, GetAllPlanets, pages, namesHeader} = useContext(Context);
+
+    const DataCharacteristics =
+        [
+            {field: "population", label: "Population", reduction: ""},
+            {field: "surfaceWater", label: "Surface water", reduction: "%"},
+            {field: "terrain", label: "Terrain", reduction: ""},
+            {field: "rotationPeriod", label: "Rotation period", reduction: "day"},
+            {field: "diameter", label: "Diameter", reduction: "km"},
+        ];
+    const JsxCharacteristics = DataCharacteristics.map((item)=> SetRecord(item.field, item.label, item.reduction));
+
     return (
         <React.Fragment>
             <ItemListContainer onLoadItemDetalis={(id) => {SetSelectedItem(id)}}
@@ -43,11 +61,7 @@ export const PlanetsPage = () =>
                                   getImgUrl={GetImgPlanetUrl}
                                   namesHeader={namesHeader[1]}
             >
-                {SetRecord("population", "Population", "")}
-                {SetRecord("surfaceWater", "surface water", "%")}
-                {SetRecord("terrain", "Terrain")}
-                {SetRecord("rotationPeriod", "Rotation period", "day")}
-                {SetRecord("diameter", "Diameter", "km")}
+                {JsxCharacteristics}
             </ItemDetalisContainer>
         </React.Fragment>
     );
@@ -56,6 +70,17 @@ export const StarshipsPage = () =>
 {
     const [selectedItem, SetSelectedItem] = useState(null);
     const {GetImgStarshipUrl, GetStarship, GetAllStarships, pages, namesHeader} = useContext(Context);
+
+    const DataCharacteristics =
+        [
+            {field: "starshipClass", label: "Class", reduction: ""},
+            {field: "length", label: "Length", reduction: "m"},
+            {field: "MGLT", label: "MGLT", reduction: "In h"},
+            {field: "crew", label: "Crew", reduction: ""},
+            {field: "passengers", label: "Passengers", reduction: ""},
+        ];
+    const JsxCharacteristics = DataCharacteristics.map((item)=> SetRecord(item.field, item.label, item.reduction));
+
     return (
         <React.Fragment>
             <ItemListContainer onLoadItemDetalis={(id) => {SetSelectedItem(id)}}
@@ -67,11 +92,7 @@ export const StarshipsPage = () =>
                                   getImgUrl={GetImgStarshipUrl}
                                   namesHeader={namesHeader[2]}
             >
-                {SetRecord("starshipClass", "Class")}
-                {SetRecord("length", "Length", "m")}
-                {SetRecord("MGLT", "MGLT", "In h")}
-                {SetRecord("crew", "Crew")}
-                {SetRecord("passengers", "passengers")}
+                {JsxCharacteristics}
             </ItemDetalisContainer>
         </React.Fragment>
     );

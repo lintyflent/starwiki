@@ -1,7 +1,7 @@
 import {HeaderView} from "../header-view/header-view";
 import React, {useContext} from "react";
-import {RandomPerson, RandomPlanet, RandomStarship} from "../../utils/randoms";
-import {PeoplesPage, PlanetsPage, StarshipsPage} from "../../utils/item-pages";
+import {RandomPerson, RandomPlanet, RandomStarship} from "../../containers/randoms-containers";
+import {PeoplesPage, PlanetsPage, StarshipsPage} from "../../containers/item-pages-containers";
 import { Route, Switch } from "react-router-dom";
 import {NotFoundView} from "../not-found-view/not-found-view";
 import {Context} from "../../utils/context";
